@@ -4,6 +4,8 @@ WORKDIR /app
 
 ADD . .
 
+ENV GOPROXY=https://goproxy.cn,direct
+
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o override
 
 FROM alpine:latest
