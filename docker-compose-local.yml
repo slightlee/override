@@ -1,0 +1,13 @@
+version: '0.1'
+services:
+  override-app:
+    container_name: override-app
+    ports:
+      - 8181:8181
+    volumes:
+      - ./config:/app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+# docker exec -it <容器ID或名称> /bin/sh
